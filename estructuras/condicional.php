@@ -15,32 +15,43 @@ if ($edad >= 18) {
 /*
 2. Condicional if-else
 Proporciona una alternativa si la condición es falsa. 
-Explicación: Si la variable $hora es menor que 12, se imprime "Buenos días"; de lo contrario, se imprime "Buenas tardes."
+Explicación: Si la variable $hora es menor que 12, se imprime "Turno Matutino"; de lo contrario, se imprime "Turno Vesepertino."
 */
 
 $hora = 15;
 if ($hora < 12) {
-    echo "Buenos días.</br>";
+    echo "Turno Matutitno.</br>";
 } else {
-    echo "Buenas tardes.</br>";
+    echo "Turno Vespertino.</br>";
 }
 
 
 /*
 3. Condicional if-elseif-else
 Permite múltiples condiciones. 
-Explicación: El código evalúa la variable $nota y ejecuta el bloque correspondiente al primer if o elseif que sea verdadero. Si $nota es 85, se imprime "Notable."
+Explicación: Se verifica si todos los lados son iguales usando if. Si es cierto, el triángulo es equilátero.
+Si no es equilátero, se verifica si al menos dos lados son iguales usando else if. Si es cierto, el triángulo es isósceles.
+Si ninguna de las condiciones anteriores se cumple, el triángulo es escaleno.
 */
-$nota = 85;
-if ($nota >= 90) {
-    echo "Sobresaliente.</br>";
-} elseif ($nota >= 75) {
-    echo "Notable.</br>";
-} elseif ($nota >= 60) {
-    echo "Aprobado.</br>";
+// Variables que contienen las longitudes de los lados del triángulo
+$lado1 = 5;
+$lado2 = 5;
+$lado3 = 8;
+
+// Variable para almacenar el tipo de triángulo
+$tipo_triangulo = "";
+
+// Usando if y else if para determinar el tipo de triángulo
+if ($lado1 == $lado2 && $lado2 == $lado3) {
+    $tipo_triangulo = "Equilátero";
+} else if ($lado1 == $lado2 || $lado1 == $lado3 || $lado2 == $lado3) {
+    $tipo_triangulo = "Isósceles";
 } else {
-    echo "Reprobado.</br>";
+    $tipo_triangulo = "Escaleno";
 }
+
+// Mostrar el resultado
+echo "Un triángulo con lados $lado1, $lado2 y $lado3 es de tipo: $tipo_triangulo";
 
 
 /*4. Condicional Anidado
