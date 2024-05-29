@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "Veronica",
+        "email": "veromedina22@gmail.com",
+        "mensaje": "este es un texto de prueba",
+        "fecha": "2024-05-29 21:18:17"
+    },
+    {
+        "nombre": "Rodrigo",
+        "email": "rodrigoperez@gmail.com",
+        "mensaje": "este es un texto de prueba del formulario de Rodrigo",
+        "fecha": "2024-05-29 21:19:24"
+    }
+]
