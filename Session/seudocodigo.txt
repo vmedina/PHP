@@ -1,0 +1,58 @@
+Pseudocódigo del Juego de Preguntas y Respuestas
+Estructura del Proyecto
+Archivo principal (index.php)
+Archivo de preguntas (questions.php)
+Archivo de estilos (style.css)
+1. Archivo Principal (index.php)
+Iniciar sesión
+
+Iniciar sesión
+Incluir el archivo de preguntas
+
+Incluir 'questions.php'
+Inicializar el juego
+
+Si no existe $_SESSION['current_question']
+    $_SESSION['current_question'] = 0
+    $_SESSION['score'] = 0
+Procesar la respuesta del usuario
+
+Si método de solicitud es POST
+    selected_answer = valor de 'answer' enviado por el formulario
+    current_question = $_SESSION['current_question']
+    Si selected_answer es igual a la respuesta correcta de la pregunta actual
+    Incrementar $_SESSION['score']
+    Mostrar mensaje "Correcto"
+Si no
+    Mostrar mensaje "Incorrecto" y la respuesta correcta
+    Incrementar $_SESSION['current_question']
+    Mostrar la siguiente pregunta
+
+Si $_SESSION['current_question'] es menor que la cantidad de preguntas
+    current_question = $_SESSION['current_question']
+    Mostrar pregunta actual
+    Mostrar opciones de respuesta
+    Crear formulario para enviar la respuesta
+Si no
+    Mostrar "Juego terminado" y la puntuación
+    Destruir sesión
+    Mostrar enlace para Jugar de nuevo
+
+
+2. Archivo de Preguntas (questions.php)
+    Definir las preguntas
+    Crear array questions con:
+    Pregunta
+    Respuestas (array de opciones)
+    Índice de la respuesta correcta
+3. Archivo de Estilos (style.css)
+    Definir estilos
+    Estilo para el cuerpo
+    Estilo para el contenedor
+    Estilo para el encabezado
+    Estilo para los párrafos
+    Estilo para el formulario
+    Estilo para las etiquetas
+    Estilo para el botón
+    Estilo para mensajes correctos
+    Estilo para mensajes incorrectos

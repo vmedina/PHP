@@ -1,0 +1,97 @@
+
+
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Configuración de partidos y número de senadores
+        function cargarCargos(){
+       
+
+
+ // Configuración de partidos y número de senadores modificar esto para recibir estos datos vía ajax
+const senadores = [
+  { partido: 'fa', cantidad: 16 },
+  { partido: 'pn', cantidad: 9 },
+  { partido: 'pc', cantidad: 5 }
+];
+
+// Configuración de semicírculo
+const radii = [90, 130, 170];  // Radios para las tres filas (ajusta según sea necesario cuanto más grande más separadas quedan las líneas)
+const centerX = 200; // Centro del contenedor (mitad de ancho)
+const centerY = 200; // Movemos el eje para que quede un poco más abajo del centro (el contenedor tiene 300px de alto)
+
+// Obtener el contenedor principal por el ID
+const graficaSenadores = document.getElementById('graficaSenadores');
+
+// Distribuir senadores en tres filas
+let filas = [[], [], []]; // Arreglo para almacenar los senadores en cada fila
+let filaIndex = 0;
+
+//se recorre la información senadores del json, y se divide en los 3 arreglos que deinimos en filas
+senadores.forEach(partido => {
+  for (let i = 0; i < partido.cantidad; i++) {
+    filas[filaIndex].push({ partido: partido.partido });
+    filaIndex = (filaIndex + 1) % 3; // Alternar entre las tres filas
+  }
+});
+
+// Recorremos las filas de senadores 
+filas.forEach((fila, index) => {
+  let angle = 0;
+  let angleIncrement = 180 / (fila.length - 1); // Incremento de ángulo para cada fila
+  
+  fila.forEach(senador => {
+    // Calcular posición en el semicírculo usando el radio de la fila actual
+    const x = centerX + radii[index] * Math.cos((angle * Math.PI) / 180);
+    const y = centerY - radii[index] * Math.sin((angle * Math.PI) / 180);
+
+    // Creamos y posicionamos por javascript un div para cada senador
+    const senatorDiv = document.createElement('div');
+    senatorDiv.className = `senator ${senador.partido}`;
+    senatorDiv.style.left = `${x}px`;
+    senatorDiv.style.top = `${y}px`;
+    //Aquí se podría ampliar la estructura para agregar más información por ejemplo un evento mouseEnter para ver el nombre del Senador, la foto etc
+    //podríamos mantener oculto ese div hasta que se dispare el evento
+    
+    // Incrementar el ángulo para la próxima posición
+    angle += angleIncrement;
+
+    // Añadir el div al contenedor
+    graficaSenadores.appendChild(senatorDiv);
+  });
+});
+
+
+}
+</script>
+</head>
+<body>
+    <body onload="cargarCargos()">
+        
+
+        <div id="graficaSenadores">
+           
+        </div>
+        <div class="referencias">
+     <!-- Frente Amplio -->
+            <div class="box fa"></div>
+            <span class="label">Frente Amplio</span></br></li>
+        
+            <!-- Partido Nacional -->
+            <div class="box pn"></div>
+            <span class="label">Partido Nacional</span></br>
+       
+             <!-- Partido Colorado -->
+            <div class="box pc"></div>
+            <span class="label">Partido Colorado</span></br>
+            <!-- Repite según el número de senadores del Partido Colorado -->
+        </div>
+    </body>
+</body>
+</html>

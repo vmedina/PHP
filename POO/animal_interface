@@ -1,0 +1,26 @@
+<?php
+interface AnimalInterface {
+    public function hacerSonido();
+}
+
+class Gato implements AnimalInterface {
+    public function hacerSonido() {
+        echo "Maullido";
+    }
+}
+
+class Vaca implements AnimalInterface {
+    public function hacerSonido() {
+        echo "Muu";
+    }
+}
+
+function hacerSonidoAnimal(AnimalInterface $animal) {
+    $animal->hacerSonido();
+}
+
+$gato = new Gato();
+$vaca = new Vaca();
+
+hacerSonidoAnimal($gato);  // Output: Maullido
+hacerSonidoAnimal($vaca);  // Output: Muu

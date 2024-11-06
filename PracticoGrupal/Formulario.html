@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rostiseria Los Peques</title>
+</head>
+<body>
+    
+    <h1>Formulario de Ingreso de Productos</h1>
+    <form action="procesar_formulario.php" method="post">
+        <label for="categoria">Categoría de Productos:</label>
+        <input type="text" id="categoria" name="categoria" required><br><br>
+
+
+    <h1>Ingrese su orden</h1>
+    <form action="/submit" method="post">
+        <label for="categoria">Categorias de comida:</label>
+        <input type="text" id="categoria" name="categoria" required><br><br>
+        
+        <h2>Hamburguesas:</h2>
+        <label for="item1_descripcion">Descripción:</label>
+        <input type="text" id="item1_descripcion" name="item1_descripcion" required><br>
+        <label for="item1_precio">Precio:</label>
+        <input type="number" id="item1_precio" name="item1_precio" step="0.01" required><br><br>
+        
+        <h2>Perros Calientes:</h2>
+        <label for="item2_descripcion">Descripción:</label>
+        <input type="text" id="item2_descripcion" name="item2_descripcion" required><br>
+        <label for="item2_precio">Precio:</label>
+        <input type="number" id="item2_precio" name="item2_precio" step="0.01" required><br><br>
+        
+        <h2>Pizzas:</h2>
+        <label for="item3_descripcion">Descripción:</label>
+        <input type="text" id="item3_descripcion" name="item3_descripcion" required><br>
+        <label for="item3_precio">Precio:</label>
+        <input type="number" id="item3_precio" name="item3_precio" step="0.01" required><br><br>
+        
+        <input type="submit" value="Enviar">
+    </form>
+    <img src="imagenes/precios.PNG" alt="">
+</body>
+</html>

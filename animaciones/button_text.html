@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón con Spinner y Texto Animado</title>
+    <style>
+        body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+
+            .loading-button {
+                display: flex;
+                align-items: center;
+                padding: 10px 20px;
+                font-size: 16px;
+                color: #fff;
+                background-color: #3498db;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .spinner {
+                width: 20px;
+                height: 20px;
+                border: 3px solid rgba(255, 255, 255, 0.3);
+                border-top: 3px solid #fff;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                margin-right: 10px;
+            }
+
+            .loading-text {
+                animation: fadeInOut 2s infinite;
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            @keyframes fadeInOut {
+                0%, 100% {
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 1;
+                }
+            }
+
+    </style>
+</head>
+<body>
+    <button class="loading-button">
+        <div class="spinner"></div>
+        <span class="loading-text">Cargando...</span>
+    </button>
+</body>
+</html>

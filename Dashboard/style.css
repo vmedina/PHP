@@ -1,0 +1,42 @@
+#graficaSenadores {   
+    width: 400px;  /* Ajusta según el tamaño deseado */
+    height: 300px; /* La mitad del ancho para hacer un semicírculo */
+    margin: 0 auto;
+  }
+  
+  .senator {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+   /* Colores para cada partido */
+   /*Para generar el degradado pueden usar esta página https://cssgradient.io/  */
+  .fa {
+    background: linear-gradient(90deg, rgba(38,0,255,1) 0%, rgba(255,255,255,1) 35%, rgba(255,0,0,1) 100%); /* Azul para Frente Amplio */
+  }
+  
+  .pn {
+    background: linear-gradient(90deg, rgba(38,0,255,1) 0%, rgba(115,173,224,1) 35%, rgba(255,255,255,1) 100%); /* Rojo para Partido Nacional */
+  }
+  
+  .pc {
+    background-color: #f04e4e; /* Rojo o color para Partido Colorado */
+  }
+  
+  .referencias{     
+        display: flex;
+        align-items: center; /* Alinea verticalmente si el contenido es de diferentes alturas */      
+  }
+
+  .box {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 25px;
+  }
+
+  .label {
+    margin-left: 10px; /* Espacio entre el div y el span */
+  }

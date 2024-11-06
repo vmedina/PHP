@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título Animado con Degradado</title>
+    <style>
+        body {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .gradient-text {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(270deg, #ff6ec4, #7873f5, #42e695);
+            background-size: 600% 600%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 8s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+        .moving-text {
+            font-size: 48px;
+            font-weight: bold;
+            white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+            position: absolute;
+            animation: moveText 10s linear infinite;
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .fading-text {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: left;
+            animation: fadeInOut 4s ease infinite;
+            color:#7873f5;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div><h1 class="gradient-text">Texto Animado</h1></div>
+
+    <div class="fading-text">Texto Fade In</div>
+
+    <div class="moving-text">Texto Desplazándose</div>
+
+</body>
+</html>

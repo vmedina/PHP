@@ -1,0 +1,37 @@
+INICIAR SESIÓN
+INCLUIR 'questions.php'
+
+SI NO EXISTE $_SESSION['current_question']
+    $_SESSION['current_question'] = 0
+    $_SESSION['score'] = 0
+FIN SI
+
+SI MÉTODO DE SOLICITUD ES POST
+    selected_answer = VALOR DE 'answer' ENVIADO POR FORMULARIO
+    current_question = $_SESSION['current_question']
+    
+    SI selected_answer ES IGUAL A questions[current_question]['correct']
+        $_SESSION['score']++
+        MOSTRAR "Correcto"
+    SI NO
+        MOSTRAR "Incorrecto. La respuesta correcta es: " + questions[current_question]['answers'][questions[current_question]['correct']]
+    FIN SI
+
+    $_SESSION['current_question']++
+FIN SI
+
+SI $_SESSION['current_question'] < CANTIDAD DE questions
+    current_question = $_SESSION['current_question']
+    question = questions[current_question]
+
+    MOSTRAR question['question']
+    MOSTRAR FORMULARIO CON:
+        PARA CADA opción EN question['answers']
+            MOSTRAR opción CON INPUT RADIO
+        FIN PARA
+        BOTÓN PARA ENVIAR FORMULARIO
+SI NO
+    MOSTRAR "Juego terminado. Tu puntuación es: " + $_SESSION['score'] + " de " + CANTIDAD DE questions
+    DESTRUIR SESIÓN
+    MOSTRAR ENLACE PARA "Jugar de nuevo"
+FIN SI

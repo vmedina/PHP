@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Subida de Archivos</title>
+</head>
+<body>
+    <h2>Formulario de Subida de Archivos</h2>
+    <form action="procesar_subida.php" method="post" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        <label for="archivo">Seleccione un archivo:</label><br>
+        <input type="file" id="archivo" name="archivo" required><br><br>
+        <input type="submit" value="Subir Archivo">
+    </form>
+</body>
+</html>

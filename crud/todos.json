@@ -1,0 +1,4 @@
+[
+    {"id": 1, "task": "Estudiar PHP", "completed": false},
+    {"id": 2, "task": "Leer un libro", "completed": false}
+]

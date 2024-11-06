@@ -1,0 +1,17 @@
+{
+    "categoria": "Italana",
+    "items": [
+        {
+            "descripcion": "fideos",
+            "precio": "230"
+        },
+        {
+            "descripcion": "carne",
+            "precio": "230"
+        },
+        {
+            "descripcion": "napolitana",
+            "precio": "250"
+        }
+    ]
+}

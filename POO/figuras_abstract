@@ -1,0 +1,36 @@
+<?php
+abstract class Figura {
+    abstract public function calcularArea();
+}
+
+class Circulo extends Figura {
+    private $radio;
+
+    public function __construct($radio) {
+        $this->radio = $radio;
+    }
+
+    public function calcularArea() {
+        return pi() * pow($this->radio, 2);
+    }
+}
+
+class Rectangulo extends Figura {
+    private $ancho;
+    private $alto;
+
+    public function __construct($ancho, $alto) {
+        $this->ancho = $ancho;
+        $this->alto = $alto;
+    }
+
+    public function calcularArea() {
+        return $this->ancho * $this->alto;
+    }
+}
+
+$circulo = new Circulo(5);
+$rectangulo = new Rectangulo(4, 6);
+
+echo $circulo->calcularArea();   // Output: 78.539816339744
+echo $rectangulo->calcularArea(); // Output: 24

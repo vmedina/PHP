@@ -1,0 +1,52 @@
+[
+    {
+        "nombreCategoria": "Bebidas",
+        "imagen": "vino.jpg",
+        "items": [
+            {
+                "nombre": "Gaseosa",
+                "precio": "200"
+            },
+            {
+                "nombre": "Vino",
+                "precio": "190"
+            },
+            {
+                "nombre": "Cerveza ",
+                "precio": "230"
+            },
+            {
+                "nombre": "Cerveza ",
+                "precio": "230"
+            }
+        ]
+    },
+    {
+        "nombreCategoria": "Pastas",
+        "imagen": "pasta.jpg",
+        "items": [
+            {
+                "nombre": "Spaguetti",
+                "precio": "350"
+            },
+            {
+                "nombre": "Tortellini",
+                "precio": "360"
+            },
+            {
+                "nombre": "\u00d1oquis",
+                "precio": "230"
+            }
+        ]
+    },
+    {
+        "nombreCategoria": "Parrilla",
+        "imagen": "parrilla.jpg",
+        "items": [
+            {
+                "nombre": "Asado",
+                "precio": "450"
+            }
+        ]
+    }
+]
